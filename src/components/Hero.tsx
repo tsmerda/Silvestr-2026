@@ -18,7 +18,7 @@ export function Hero() {
         <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-slate-200 backdrop-blur sm:text-sm">
           5 kluků <span className="text-slate-500">•</span> auta z Brna
           <span className="text-slate-500">•</span> červen / červenec
-          <span className="text-slate-500">•</span> kolo dobrovolné
+          <span className="text-slate-500">•</span> kolo = must-have
         </span>
 
         <h1 className="mt-6 max-w-4xl text-4xl font-black leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">

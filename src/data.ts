@@ -253,7 +253,7 @@ export const vote = {
   term: {
     title: 'Termín',
     emoji: '📅',
-    options: ['Konec června', 'První víkend v červenci', 'Po Sardinii', 'Podle ubytka'],
+    options: ['Konec června', 'První víkend v červenci', 'Polovina července', 'Podle ubytka'],
   },
   style: {
     title: 'Styl tripu',
