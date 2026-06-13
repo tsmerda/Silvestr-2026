@@ -27,6 +27,19 @@ export const gallery: Shot[] = [
   { src: img('1527786356703-4b100091cd2c', 800), label: 'Roadtrip z Brna', emoji: '🚗', fallback: 'bg-gradient-to-br from-slate-700 to-slate-900' },
 ]
 
+/** Malé album z okolí – ať si kluci dokážou představit, jak to tam vypadá.
+ *  Drženo minimalisticky: jen fotka + krátký popisek, žádné emoji. */
+export type Scene = { src: string; caption: string }
+
+export const scenery: Scene[] = [
+  { src: img('1439066615861-d1af74d74000', 800), caption: 'Molo a teplá voda' },
+  { src: img('1465056836041-7f43ac27dcb5', 800), caption: 'Jezero pod horami' },
+  { src: img('1527668752968-14dc70a27c95', 800), caption: 'Alpské údolí' },
+  { src: img('1437209484568-e63b90a34f8b', 800), caption: 'Kopce na kolo' },
+  { src: img('1432405972618-c60b0225b8f9', 800), caption: 'Příroda na výlet' },
+  { src: img('1595867818082-083862f3d630', 800), caption: 'Večer ve městě' },
+]
+
 // ---- Sticky navigace ------------------------------------------------------
 export const navItems = [
   { id: 'proc', label: 'Proč' },

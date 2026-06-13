@@ -3,6 +3,7 @@ import { Hero } from './components/Hero'
 import { VibeStrip } from './components/VibeStrip'
 import { Why } from './components/Why'
 import { Locations } from './components/Locations'
+import { Scenery } from './components/Scenery'
 import { Program } from './components/Program'
 import { Routes } from './components/Routes'
 import { Packing } from './components/Packing'
@@ -22,6 +23,7 @@ export default function App() {
         </div>
         <Why />
         <Locations />
+        <Scenery />
         <Program />
         <Routes />
         <Packing />
