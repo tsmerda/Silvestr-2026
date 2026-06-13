@@ -1,19 +1,12 @@
-import { images } from '../data'
+import { gallery } from '../data'
 import { SmartImage } from './ui/SmartImage'
 
-const shots = [
-  { src: images.bike, label: 'Ranní švih', emoji: '🚴', fallback: 'bg-gradient-to-br from-emerald-900 to-slate-900' },
-  { src: images.swim, label: 'Koupačka', emoji: '🌊', fallback: 'bg-gradient-to-br from-teal-800 to-slate-900' },
-  { src: images.beer, label: 'Pivo po', emoji: '🍺', fallback: 'bg-gradient-to-br from-amber-800 to-slate-900' },
-  { src: images.bbq, label: 'Večerní gril', emoji: '🔥', fallback: 'bg-gradient-to-br from-orange-900 to-slate-900' },
-]
-
-/** Vizuální pruh – čtyři fotky, co vystihujou celý trip. */
+/** Vizuální galerie – fotky, co vystihujou celý trip. */
 export function VibeStrip() {
   return (
     <div className="mx-auto max-w-6xl px-5 sm:px-8">
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        {shots.map((s) => (
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+        {gallery.map((s) => (
           <div
             key={s.label}
             className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 sm:aspect-[4/3]"

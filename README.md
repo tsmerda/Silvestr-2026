@@ -42,7 +42,9 @@ Stačí měnit pole, UI se přizpůsobí samo.
 | Rozpočet                     | `budget`                  |
 | Možnosti v hlasování         | `vote`                    |
 | Odkazy v horní navigaci      | `navItems`                |
-| Obrázky (Unsplash URL)       | `images`                  |
+| Hero obrázek                 | `images.hero`             |
+| Fotogalerie (vibe pruh)      | `gallery`                 |
+| Fotky lokalit / tras         | `image:` u `locations` / `routes` |
 
 Texty v hero sekci a závěrečné výzvě jsou napsané přímo v komponentách
 [`src/components/Hero.tsx`](src/components/Hero.tsx) a
@@ -72,7 +74,8 @@ Používají se veřejné hotlinkovatelné fotky z Unsplash. Pokud se některá
 nenačte (třeba bez internetu), komponenta `SmartImage` ji automaticky nahradí
 barevným gradientem – stránka tím pádem nikdy nevypadá rozbitě.
 
-Chceš jiné fotky? Vyměň URL v `images` v [`src/data.ts`](src/data.ts).
+Chceš jinou fotku? V [`src/data.ts`](src/data.ts) stačí vyměnit ID fotky
+v pomocníkovi `img('<ID>')` – `<ID>` je část za `photo-` v Unsplash URL.
 
 ---
 

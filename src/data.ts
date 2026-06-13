@@ -3,15 +3,29 @@
 // rozpočet / hlasování? Stačí měnit pole níže, UI se přizpůsobí samo.
 // ---------------------------------------------------------------------------
 
-/** Obrázky – veřejné hotlinkovatelné URL z Unsplash. Když nějaký nenačte,
- *  komponenta SmartImage ho elegantně nahradí barevným gradientem. */
+/** Obrázky – veřejné hotlinkovatelné fotky z Unsplash. Když nějaká nenačte,
+ *  komponenta SmartImage ji elegantně nahradí barevným gradientem.
+ *  Chceš jinou fotku? Stačí vyměnit ID v `img('<ID>')`. */
+const img = (id: string, w = 1000) =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`
+
 export const images = {
-  hero: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1920&q=80',
-  bike: 'https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=1200&q=80',
-  swim: 'https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1200&q=80',
-  beer: 'https://images.unsplash.com/photo-1436076863939-06870fe779c2?auto=format&fit=crop&w=1200&q=80',
-  bbq: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1200&q=80',
+  hero: img('1506905925346-21bda4d32df4', 1920),
 } as const
+
+/** Fotogalerie – vibe celého tripu (voda, kolo, pivo, gril, slunce, bar…). */
+export type Shot = { src: string; label: string; emoji: string; fallback: string }
+
+export const gallery: Shot[] = [
+  { src: img('1541625602330-2277a4c46182', 800), label: 'Ranní švih', emoji: '🚴', fallback: 'bg-gradient-to-br from-emerald-900 to-slate-900' },
+  { src: img('1530549387789-4c1017266635', 800), label: 'Koupačka', emoji: '🏊', fallback: 'bg-gradient-to-br from-teal-800 to-slate-900' },
+  { src: img('1517176118179-65244903d13c', 800), label: 'Paddleboard', emoji: '🏄', fallback: 'bg-gradient-to-br from-cyan-800 to-slate-900' },
+  { src: img('1472213984618-c79aaec7fef0', 800), label: 'Slunce u vody', emoji: '☀️', fallback: 'bg-gradient-to-br from-amber-700 to-slate-900' },
+  { src: img('1436076863939-06870fe779c2', 800), label: 'Pivo po švihu', emoji: '🍺', fallback: 'bg-gradient-to-br from-amber-800 to-slate-900' },
+  { src: img('1514933651103-005eec06c04b', 800), label: 'Večer v baru', emoji: '🍹', fallback: 'bg-gradient-to-br from-fuchsia-900 to-slate-900' },
+  { src: img('1555939594-58d7cb561ad1', 800), label: 'Gril', emoji: '🔥', fallback: 'bg-gradient-to-br from-orange-900 to-slate-900' },
+  { src: img('1527786356703-4b100091cd2c', 800), label: 'Roadtrip z Brna', emoji: '🚗', fallback: 'bg-gradient-to-br from-slate-700 to-slate-900' },
+]
 
 // ---- Sticky navigace ------------------------------------------------------
 export const navItems = [
@@ -55,6 +69,7 @@ export type Location = {
   name: string
   vibe: string
   forWho: string
+  image: string
   scores: { koupani: number; kolo: number; vecer: number; cena: number }
 }
 
@@ -64,6 +79,7 @@ export const locations: Location[] = [
     name: 'Klopeiner See',
     vibe: 'Nejteplejší voda v okolí, klid a koupací pohoda.',
     forWho: 'Pro ty, co chtějí hlavně vodu, slunce a vypnout.',
+    image: img('1483728642387-6c3bdd6c93e5', 800),
     scores: { koupani: 5, kolo: 3, vecer: 3, cena: 4 },
   },
   {
@@ -71,6 +87,7 @@ export const locations: Location[] = [
     name: 'Wörthersee / Velden',
     vibe: 'Víc života, bary, promenáda, večerní program.',
     forWho: 'Pro ty, co chtějí kromě vody i nějaký ten večer venku.',
+    image: img('1467269204594-9661b134dd2b', 800),
     scores: { koupani: 4, kolo: 4, vecer: 5, cena: 2 },
   },
   {
@@ -78,6 +95,7 @@ export const locations: Location[] = [
     name: 'Faaker See',
     vibe: 'Krásná tyrkysová voda, víc přírodní vibe.',
     forWho: 'Pro milovníky parádních fotek a klidnějšího kempu.',
+    image: img('1454496522488-7a8e488e8606', 800),
     scores: { koupani: 5, kolo: 4, vecer: 3, cena: 3 },
   },
   {
@@ -85,6 +103,7 @@ export const locations: Location[] = [
     name: 'Ossiacher See',
     vibe: 'Rozumný kompromis mezi kolem, vodou a dostupností.',
     forWho: 'Pro partu, co chce od všeho trochu a neřešit.',
+    image: img('1470770841072-f978cf4d019e', 800),
     scores: { koupani: 4, kolo: 5, vecer: 3, cena: 4 },
   },
 ]
@@ -147,6 +166,7 @@ export type Route = {
   difficulty: string
   forWho: string
   bring: string
+  image: string
 }
 
 export const routes: Route[] = [
@@ -157,6 +177,7 @@ export const routes: Route[] = [
     difficulty: 'Lehká',
     forWho: 'Kolem jezera, vhodné pro úplně všechny.',
     bring: 'Cokoliv s koly, plavky a dobrou náladu.',
+    image: img('1559521783-1d1599583485', 700),
   },
   {
     emoji: '🚴',
@@ -165,6 +186,7 @@ export const routes: Route[] = [
     difficulty: 'Střední – těžší',
     forWho: 'Zvlněné silnice, dobré pro silničku.',
     bring: 'Bidony, gel, tretry a chuť šlapat.',
+    image: img('1571068316344-75bc76f77890', 700),
   },
   {
     emoji: '⛰️',
@@ -173,6 +195,7 @@ export const routes: Route[] = [
     difficulty: 'Střední',
     forWho: 'Pro horáka nebo gravel, trochu terénu.',
     bring: 'Hustilku, duši, nářadí a helmu.',
+    image: img('1576858574144-9ae1ebcf5ae5', 700),
   },
 ]
 
