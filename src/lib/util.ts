@@ -20,7 +20,9 @@ export function photoUrl(p: Photo, w: number) {
   return `https://wsrv.nl/?url=${encodeURIComponent(p.src)}&w=${w}&output=webp&q=74`
 }
 
+/** Záloha, když se fotka nenačte: originál, u Commons naopak zmenšovač. */
 export function photoFallback(p: Photo) {
+  if (p.direct) return `https://wsrv.nl/?url=${encodeURIComponent(p.src)}&w=1280&output=webp&q=74`
   return encodeURI(decodeURI(p.src))
 }
 
