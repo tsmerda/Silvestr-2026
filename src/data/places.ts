@@ -64,6 +64,8 @@ export type Place = {
   access: Access
   /** Pro řazení „Nejblíž chatě“, když chybí trasa. */
   airKm?: number
+  /** Dotaz pro „Uložit v Google Mapách“ – název, ať se uloží skutečný podnik. */
+  googleQuery?: string
 }
 
 export type EventOption = {
@@ -153,6 +155,7 @@ export const places: Place[] = [
   },
   {
     id: 'myto',
+    googleQuery: 'Mýto Ski & Bike, Mýto pod Ďumbierom',
     name: 'Mýto Ski & Bike – après-ski bar',
     short: 'Nejbližší areál a bar pod svahem',
     category: ['apres', 'ski'],
@@ -185,6 +188,7 @@ export const places: Place[] = [
   },
   {
     id: 'tale',
+    googleQuery: 'Ski Tále, Bystrá',
     name: 'Ski Tále',
     short: 'Lyžování 4 km od chaty',
     category: ['ski'],
@@ -205,6 +209,7 @@ export const places: Place[] = [
   },
   {
     id: 'krupova',
+    googleQuery: 'Krupová lanovka Chopok juh, Horná Lehota',
     name: 'Chopok Juh – Après-ski bar Krupová',
     short: 'Bar u dolní stanice lanovky',
     category: ['apres', 'ski'],
@@ -230,6 +235,7 @@ export const places: Place[] = [
   },
   {
     id: 'priehyba',
+    googleQuery: 'Funibar Priehyba, Jasná',
     name: 'Priehyba – Funibar',
     short: 'Tip na après-ski během lyžařského dne',
     category: ['apres', 'ski'],
@@ -259,6 +265,7 @@ export const places: Place[] = [
   },
   {
     id: 'skybar',
+    googleQuery: 'DOUBLE RED Cars Museum, Mostárenská, Brezno',
     name: 'Sky Bar – Double Red Cars Museum',
     short: 'Jurassic Night · Brezno',
     category: ['party'],
@@ -280,6 +287,7 @@ export const places: Place[] = [
   },
   {
     id: 'happyend',
+    googleQuery: 'Happy End Jasná, Demänovská Dolina',
     name: 'Happy End Jasná',
     short: 'Silvestr s KALI & Peter Pann · Biela Púť',
     category: ['party'],

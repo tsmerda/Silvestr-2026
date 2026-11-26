@@ -111,16 +111,8 @@ writeFileSync(new URL('../public/silvestr-2026.kml', import.meta.url), kml)
 console.log('public/silvestr-2026.kml', kml.length, 'B')
 
 // Odkazy pro uložení do seznamu v appce Google Maps (dotaz podle názvu, ať se uloží skutečný podnik)
-const GQ: Record<string, string> = {
-  myto: 'Mýto Ski & Bike, Mýto pod Ďumbierom',
-  tale: 'Ski Tále, Bystrá',
-  krupova: 'Krupová lanovka Chopok juh, Horná Lehota',
-  priehyba: 'Funibar Priehyba, Jasná',
-  skybar: 'DOUBLE RED Cars Museum, Mostárenská, Brezno',
-  happyend: 'Happy End Jasná, Demänovská Dolina',
-}
 const links = places.map((p) => {
-  const q = GQ[p.id] ?? `${p.pos[0]},${p.pos[1]}`
+  const q = p.googleQuery ?? `${p.pos[0]},${p.pos[1]}`
   return `- ${NAMES[p.id] ?? p.name}: https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`
 })
 writeFileSync(new URL('../public/silvestr-2026-odkazy.txt', import.meta.url), links.join('\n') + '\n')

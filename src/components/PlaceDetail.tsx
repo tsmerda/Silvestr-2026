@@ -213,6 +213,15 @@ export function PlaceDetail({ place }: { place: Place }) {
       </div>
       <p className="text-[15px] leading-relaxed text-slate-700">{place.description}</p>
       <NavButtons place={place} />
+      <a
+        className="btn-ghost w-full justify-center"
+        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.googleQuery ?? `${place.pos[0]},${place.pos[1]}`)}`}
+        target="_blank"
+        rel="noreferrer"
+        data-save="google"
+      >
+        ⭐ Uložit v Google Mapách (do seznamu Silvestr 2026)
+      </a>
       <div className="flex flex-wrap gap-2">
         {place.instagram && (
           <a className="btn-ghost" href={place.instagram.url} target="_blank" rel="noreferrer">
