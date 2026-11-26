@@ -82,7 +82,10 @@ export function MapView({ places, dimmed, selectedId, onSelect, routes, subPoint
     subLayer.current = L.layerGroup().addTo(m)
     markerLayer.current = L.layerGroup().addTo(m)
     m.setView([48.846, 19.616], 15)
-    const zcls = () => el.current?.classList.toggle('zoom-low', m.getZoom() < 12.5)
+    const zcls = () => {
+      el.current?.classList.toggle('zoom-low', m.getZoom() < 12.5)
+      el.current?.classList.toggle('zoom-near', m.getZoom() >= 17)
+    }
     m.on('zoomend', zcls)
     zcls()
     map.current = m

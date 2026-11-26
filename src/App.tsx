@@ -7,6 +7,7 @@ import { PlaceCompact, PlaceDetail } from './components/PlaceDetail'
 import { NyePanel, NyeSummary, VariantToggle } from './components/NyePanel'
 import { distanceInfo, routes } from './lib/util'
 import { CountdownShort, Snow } from './components/Festive'
+import { IconDownload, IconExpand, IconHome, IconSnow, IconSpark } from './components/Icons'
 
 type Mode = 'mapa' | 'silvestr'
 type Filter = 'vse' | 'nejbliz' | 'apres' | 'party' | 'ski'
@@ -199,7 +200,13 @@ export default function App() {
           onClick={() => changeMode(m)}
           className={`whitespace-nowrap rounded-full px-3 py-1.5 text-[13px] font-bold transition ${mode === m ? (m === 'silvestr' ? 'nye-tab text-white' : 'bg-slate-900 text-white') : 'text-slate-700'}`}
         >
-          {m === 'mapa' ? 'Mapa' : desktop ? '🎆 Silvestr 31. 12.' : '🎆 Silvestr'}
+          {m === 'mapa' ? (
+            'Mapa'
+          ) : (
+            <span className="inline-flex items-center gap-1">
+              <IconSpark size={14} /> {desktop ? 'Silvestr 31. 12.' : 'Silvestr'}
+            </span>
+          )}
         </button>
       ))}
     </div>
@@ -224,10 +231,10 @@ export default function App() {
   const mapButtons = (
     <div className="flex shrink-0 flex-col items-end gap-2 whitespace-nowrap">
       <button type="button" onClick={backHome} className="map-btn" data-testid="back-home">
-        <span aria-hidden="true">⌂</span> Zpět na chatu
+        <IconHome size={16} /> Zpět na chatu
       </button>
       <button type="button" onClick={wholeArea} className="map-btn" data-testid="whole-area">
-        <span aria-hidden="true">⤢</span> Celá oblast
+        <IconExpand size={15} /> Celá oblast
       </button>
     </div>
   )
@@ -242,7 +249,6 @@ export default function App() {
           <PlaceCompact key={p.id} place={p} active={p.id === selectedId} onClick={() => select(p.id)} />
         ))}
       </div>
-      <a href="./silvestr-2026.kml" download className="btn-ghost mt-3">📍 Piny pro Google My Maps (KML)</a>
     </section>
   )
 
@@ -265,7 +271,7 @@ export default function App() {
         <aside className="flex h-full w-[380px] shrink-0 flex-col border-r border-slate-200 bg-white">
           <div className="space-y-3 border-b border-slate-100 p-4">
             <div className="nye-hero relative overflow-hidden rounded-2xl p-3.5 text-white">
-              <h1 className="relative text-xl font-black tracking-tight text-amber-300">❄ {trip.title}</h1>
+              <h1 className="relative flex items-center gap-1.5 text-xl font-black tracking-tight text-amber-300"><IconSnow size={18} /> {trip.title}</h1>
               <p className="relative text-sm text-white/85">Chata Lenka · Mýto pod Ďumbierom · {trip.dates}</p>
               <p className="relative mt-1 text-xs font-semibold text-amber-200/90">
                 <CountdownShort />
@@ -280,8 +286,10 @@ export default function App() {
                 {(filter === 'vse' ? [CHATA, ...filtered] : filtered).map((p) => (
                   <PlaceCompact key={p.id} place={p} active={p.id === selectedId} onClick={() => select(p.id)} />
                 ))}
-                <a href="./silvestr-2026.kml" download className="btn-ghost mt-3">📍 Piny pro Google My Maps (KML)</a>
-              </div>
+                <a href="./silvestr-2026.kml" download className="btn-soft mt-3 !justify-start">
+                  <IconDownload size={16} /> Piny pro Google My Maps (KML)
+                </a>
+                        </div>
             ) : (
               <NyePanel variant={variant} onFocus={focusFromPlan} />
             )}
@@ -315,7 +323,7 @@ export default function App() {
       <header className="pointer-events-none absolute inset-x-0 top-0 z-[800] space-y-2 px-3 pt-[max(env(safe-area-inset-top),10px)]">
         <div className="pointer-events-auto flex items-center justify-between gap-2">
           <div className="brand-pill min-w-0 rounded-2xl px-3 py-1.5 shadow-lg">
-            <div className="truncate text-[13px] font-extrabold leading-tight text-amber-300">❄ Silvestr v Mýtě</div>
+            <div className="flex items-center gap-1 truncate text-[13px] font-extrabold leading-tight text-amber-300"><IconSnow size={13} /> Silvestr v Mýtě</div>
             <div className="truncate text-[11px] font-medium leading-tight text-white/80" data-testid="countdown-short">
               <CountdownShort />
             </div>

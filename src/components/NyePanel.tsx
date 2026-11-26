@@ -3,6 +3,7 @@ import { events, placeById } from '../data/places'
 import { duration, km, routes } from '../lib/util'
 import { EventCard } from './PlaceDetail'
 import { Countdown } from './Festive'
+import { IconCar, IconMountain, IconPin } from './Icons'
 
 export function VariantToggle({ variants, value, onChange }: { variants: NyeVariant[]; value: string; onChange: (id: NyeVariant['id']) => void }) {
   return (
@@ -31,8 +32,8 @@ export function NyeSummary({ variant }: { variant: NyeVariant }) {
   return (
     <div className="mt-2 flex items-center justify-between gap-2 text-[13px]">
       <span className="truncate font-semibold text-slate-800">{main}</span>
-      <span className="shrink-0 rounded-full bg-blue-600 px-2 py-0.5 font-bold text-white">
-        🚗 {duration(r.min)}
+      <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-blue-600 px-2 py-0.5 font-bold text-white">
+        <IconCar size={13} /> {duration(r.min)}
       </span>
     </div>
   )
@@ -59,7 +60,7 @@ export function NyePanel({ variant, onFocus }: { variant: NyeVariant; onFocus: (
       </section>
       {variant.id === 'klub' && (
         <p className="rounded-xl bg-violet-50 p-2.5 text-[13px] text-violet-900 ring-1 ring-violet-200">
-          ⛰️ Klub je na severní straně Chopku. Silnice přes hřeben nevede, jede se přes průsmyk <b>Čertovica</b> a Liptov.
+          <IconMountain size={16} className="mr-1 inline -translate-y-px" />Klub je na severní straně Chopku. Silnice přes hřeben nevede, jede se přes průsmyk <b>Čertovica</b> a Liptov.
         </p>
       )}
       <ul className="space-y-1.5 text-sm text-slate-700">
@@ -96,7 +97,7 @@ export function NyePanel({ variant, onFocus }: { variant: NyeVariant; onFocus: (
                 </div>
                 <div className="mt-0.5 text-sm font-bold text-slate-900">{s.title}</div>
                 <div className="text-[13px] text-slate-700">{s.text}</div>
-                {s.placeId && <div className="mt-1 text-[12px] font-semibold text-sky-700">📍 {placeById(s.placeId).name} – ukázat na mapě</div>}
+                {s.placeId && <div className="mt-1 text-[12px] font-semibold text-sky-700 inline-flex items-center gap-1"><IconPin size={13} /> {placeById(s.placeId).name} – ukázat na mapě</div>}
               </button>
             </li>
           ))}

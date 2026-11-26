@@ -14,7 +14,8 @@ body,
 }
 
 body {
-  @apply bg-slate-100 text-slate-900 antialiased;
+  @apply bg-[#f4f2ee] text-slate-900 antialiased;
+  font-feature-settings: 'ss01', 'cv11';
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -25,21 +26,71 @@ body {
   display: none;
 }
 
-/* ---- Tlačítka ------------------------------------------------------------ */
-.btn-primary {
-  @apply inline-flex items-center gap-1.5 rounded-full bg-slate-900 px-3.5 py-2 text-sm font-bold text-white shadow-sm active:scale-[0.98];
+/* ---- Tlačítka a karty ---------------------------------------------------- */
+.btn-dark,
+.btn-light,
+.btn-gold,
+.btn-soft,
+.btn-insta {
+  @apply flex min-h-12 items-center justify-center gap-2 rounded-2xl px-4 text-[15px] font-bold tracking-[-0.005em] transition active:scale-[0.98];
 }
-.btn-nav {
-  @apply flex items-center justify-center gap-1 rounded-2xl bg-[#b4232a] px-3 py-3 text-center text-sm font-bold text-white shadow-sm active:scale-[0.98];
+.btn-dark {
+  @apply bg-[#0b1220] text-white shadow-[0_8px_20px_-10px_rgba(11,18,32,0.8)];
 }
-.btn-nav + .btn-nav {
-  @apply bg-slate-900;
+.btn-light {
+  @apply bg-white text-slate-900 ring-1 ring-slate-200 shadow-sm;
+}
+.btn-gold {
+  background: linear-gradient(135deg, #f6d27a, #e0a43a 55%, #c9822a);
+  @apply text-[#2a1a05] shadow-[0_10px_24px_-12px_rgba(201,130,42,0.9)];
+}
+.btn-soft {
+  @apply min-h-11 bg-slate-100 text-[14px] font-semibold text-slate-800;
+}
+.btn-insta {
+  background: linear-gradient(120deg, #4f5bd5, #962fbf 35%, #d62976 65%, #fa7e1e);
+  @apply text-white shadow-[0_10px_24px_-14px_rgba(150,47,191,0.9)];
 }
 .btn-ghost {
-  @apply inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-2 text-[13px] font-semibold text-slate-800 ring-1 ring-slate-200 active:scale-[0.98];
+  @apply inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-2 text-[13px] font-semibold text-slate-800 active:scale-[0.98];
 }
 .map-btn {
-  @apply inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-2 text-[13px] font-bold text-slate-900 shadow-md ring-1 ring-black/5 backdrop-blur active:scale-[0.97];
+  @apply inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3.5 py-2 text-[13px] font-bold text-slate-900 shadow-[0_6px_18px_-8px_rgba(15,23,42,0.5)] ring-1 ring-black/5 backdrop-blur-md active:scale-[0.97];
+}
+.card {
+  @apply rounded-[22px] bg-white ring-1 ring-slate-200/70 shadow-[0_8px_24px_-16px_rgba(15,23,42,0.35)];
+}
+.eyebrow {
+  @apply text-[11px] font-bold uppercase tracking-[0.12em] text-slate-400;
+}
+.glass-chip {
+  @apply inline-flex items-center gap-1 rounded-full bg-black/45 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur-md;
+}
+
+/* ---- Fotky ----------------------------------------------------------------- */
+.img-loading {
+  background: linear-gradient(100deg, #e2e8f0 30%, #f1f5f9 50%, #e2e8f0 70%);
+  background-size: 300% 100%;
+  animation: shimmer 1.3s linear infinite;
+}
+.img-in {
+  animation: fadeIn 0.35s ease both;
+}
+.img-missing {
+  background: linear-gradient(135deg, #1e293b, #334155);
+}
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}
+
+/* Tlumenější, „prémiová“ mapa */
+.osm-tiles {
+  filter: saturate(0.62) contrast(0.96) brightness(1.04);
 }
 
 /* ---- Legenda tras -------------------------------------------------------- */
@@ -285,7 +336,7 @@ body {
   position: absolute;
   inset: 0 0 auto 0;
   height: 3px;
-  border-radius: 22px 22px 0 0;
+  border-radius: 28px 28px 0 0;
   background: linear-gradient(90deg, #b4232a, #d97706, #fbbf24, #d97706, #b4232a);
   opacity: 0.85;
 }
@@ -301,5 +352,9 @@ body {
 }
 
 .zoom-low .pin:not(.pin--sel):not(.pin--base) .pin__label {
+  display: none;
+}
+
+.leaflet-container:not(.zoom-near) .sub em {
   display: none;
 }

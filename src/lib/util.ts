@@ -14,16 +14,18 @@ export const routes = routesJson as unknown as Record<string, Route>
 
 export const CHATA = places.find((p) => p.id === trip.base)!
 
-/** Fotky z oficiálních webů jsou velké (2–4 MB) – posíláme je přes zmenšovač wsrv.nl. */
-export function photoUrl(p: Photo, w: number) {
-  if (p.direct) return p.src
-  return `https://wsrv.nl/?url=${encodeURIComponent(p.src)}&w=${w}&output=webp&q=74`
-}
+const wsrv = (src: string, w: number) => `https://wsrv.nl/?url=${encodeURIComponent(src)}&w=${w}&output=webp&q=76&we`
 
-/** Záloha, když se fotka nenačte: originál, u Commons naopak zmenšovač. */
-export function photoFallback(p: Photo) {
-  if (p.direct) return `https://wsrv.nl/?url=${encodeURIComponent(p.src)}&w=1280&output=webp&q=74`
-  return encodeURI(decodeURI(p.src))
+/** Bezpečně zakódovaná původní URL (diakritika, mezery). */
+const original = (src: string) => encodeURI(decodeURI(src))
+
+/**
+ * Pořadí zdrojů fotky. Fotky z oficiálních webů mají 2–4 MB, takže jdou přes
+ * zmenšovač wsrv.nl; když selže, načte se originál. Commons jde napřímo.
+ */
+export function photoSources(p: Photo, w: number): string[] {
+  if (p.direct) return [p.src, wsrv(p.src, w)]
+  return [wsrv(p.src, w), original(p.src)]
 }
 
 export const km = (n: number) => `${n.toLocaleString('cs-CZ', { maximumFractionDigits: n < 10 ? 1 : 0 })} km`

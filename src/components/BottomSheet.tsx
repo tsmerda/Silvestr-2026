@@ -161,7 +161,7 @@ export function BottomSheet({ snap, onSnap, peekHeight, header, children, conten
 
   return (
     <div
-      className="sheet fixed inset-x-0 bottom-0 z-[900] flex flex-col rounded-t-[22px] bg-white shadow-[0_-8px_30px_rgba(15,23,42,0.18)]"
+      className="sheet fixed inset-x-0 bottom-0 z-[900] flex flex-col rounded-t-[28px] bg-[#f7f6f3] shadow-[0_-10px_40px_rgba(15,23,42,0.22)]"
       style={{
         height: full,
         transform: `translateY(${full - visible}px)`,
@@ -171,7 +171,7 @@ export function BottomSheet({ snap, onSnap, peekHeight, header, children, conten
       data-testid="sheet"
     >
       <div {...headerHandlers} className="shrink-0 cursor-grab touch-none select-none px-4 pb-2 pt-2 active:cursor-grabbing">
-        <div className="mx-auto mb-2 h-1.5 w-10 rounded-full bg-slate-300" aria-hidden="true" />
+        <div className="mx-auto mb-2 h-1.5 w-10 rounded-full bg-slate-300/80" aria-hidden="true" />
         {header}
       </div>
       <div

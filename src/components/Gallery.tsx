@@ -1,7 +1,8 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import type { Photo } from '../data/places'
-import { hostOf, photoFallback, photoUrl } from '../lib/util'
+import { hostOf, photoSources } from '../lib/util'
+import { IconClose, IconExpand, IconImage } from './Icons'
 
 const KIND_LABEL: Record<Photo['kind'], string | null> = {
   venue: null,
@@ -10,43 +11,68 @@ const KIND_LABEL: Record<Photo['kind'], string | null> = {
   poster: 'Plakát akce',
 }
 
-export function Img({ photo, w, className, eager }: { photo: Photo; w: number; className?: string; eager?: boolean }) {
-  const [src, setSrc] = useState(photoUrl(photo, w))
+type ImgProps = { photo: Photo; w: number; className?: string; eager?: boolean }
+
+/**
+ * Fotka s řetězem záloh (zmenšovač → originál, u Commons naopak).
+ * Obrázek je vždy viditelný – žádné skrývání přes opacity, které na iOS
+ * u fotek z mezipaměti umělo nechat prázdné místo.
+ */
+export function Img(props: ImgProps) {
+  return <ImgInner key={props.photo.src + '@' + props.w} {...props} />
+}
+
+function ImgInner({ photo, w, className, eager }: ImgProps) {
+  const sources = useMemo(() => photoSources(photo, w), [photo, w])
+  const [i, setI] = useState(0)
   const [loaded, setLoaded] = useState(false)
-  useEffect(() => {
-    setSrc(photoUrl(photo, w))
-    setLoaded(false)
-  }, [photo, w])
+  const ref = useCallback((img: HTMLImageElement | null) => {
+    if (img && img.complete && img.naturalWidth > 0) setLoaded(true)
+  }, [])
+
+  if (i >= sources.length) {
+    return (
+      <div role="img" aria-label={photo.caption} className={`${className ?? ''} img-missing grid place-items-center`}>
+        <div className="flex flex-col items-center gap-1 px-4 text-center text-white/80">
+          <IconImage size={26} />
+          <span className="text-[11px] font-semibold">Foto se nenačetlo</span>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <img
-      src={src}
+      ref={ref}
+      src={sources[i]}
       alt={photo.caption}
       loading={eager ? 'eager' : 'lazy'}
       decoding="async"
       draggable={false}
+      referrerPolicy="no-referrer"
       onLoad={() => setLoaded(true)}
       onError={() => {
-        const fb = photoFallback(photo)
-        if (src !== fb) setSrc(fb)
+        setLoaded(false)
+        setI((x) => x + 1)
       }}
-      className={`${className ?? ''} bg-slate-200 transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+      className={`${className ?? ''} ${loaded ? 'img-in' : 'img-loading'}`}
     />
   )
 }
 
 export function Credit({ photo, dark }: { photo: Photo; dark?: boolean }) {
   return (
-    <p className={`text-[11px] leading-snug ${dark ? 'text-white/60' : 'text-slate-500'}`}>
+    <p className={`truncate text-[11px] leading-snug ${dark ? 'text-white/55' : 'text-slate-400'}`}>
       Foto: {photo.credit}
       {photo.license ? ` · ${photo.license}` : ''} ·{' '}
-      <a href={photo.sourceUrl} target="_blank" rel="noreferrer" className="underline underline-offset-2">
-        zdroj ({hostOf(photo.sourceUrl)})
+      <a href={photo.sourceUrl} target="_blank" rel="noreferrer" className="underline decoration-dotted underline-offset-2">
+        {hostOf(photo.sourceUrl)}
       </a>
     </p>
   )
 }
 
-export function Gallery({ photos, tall }: { photos: Photo[]; tall?: boolean }) {
+export function Gallery({ photos }: { photos: Photo[] }) {
   const ref = useRef<HTMLDivElement>(null)
   const [idx, setIdx] = useState(0)
   const [open, setOpen] = useState<number | null>(null)
@@ -58,8 +84,7 @@ export function Gallery({ photos, tall }: { photos: Photo[]; tall?: boolean }) {
 
   const onScroll = () => {
     const el = ref.current
-    if (!el) return
-    setIdx(Math.round(el.scrollLeft / el.clientWidth))
+    if (el) setIdx(Math.round(el.scrollLeft / el.clientWidth))
   }
 
   const cur = photos[Math.min(idx, photos.length - 1)]
@@ -67,40 +92,38 @@ export function Gallery({ photos, tall }: { photos: Photo[]; tall?: boolean }) {
 
   return (
     <div>
-      <div className="relative overflow-hidden rounded-2xl">
-        <div
-          ref={ref}
-          onScroll={onScroll}
-          className="no-scrollbar flex snap-x snap-mandatory overflow-x-auto"
-          data-testid="gallery"
-        >
+      <div className="relative overflow-hidden rounded-[22px] bg-slate-200 shadow-[0_10px_30px_-12px_rgba(15,23,42,0.45)]">
+        <div ref={ref} onScroll={onScroll} className="no-scrollbar flex snap-x snap-mandatory overflow-x-auto" data-testid="gallery">
           {photos.map((p, i) => (
             <button
               key={p.src}
               type="button"
               onClick={() => setOpen(i)}
-              className={`relative w-full shrink-0 snap-center ${tall ? 'aspect-[4/3]' : 'aspect-[16/10]'}`}
+              className="relative aspect-[4/3] w-full shrink-0 snap-center"
               aria-label={`Otevřít fotku: ${p.caption}`}
             >
-              <Img photo={p} w={900} eager={i === 0} className="absolute inset-0 h-full w-full object-cover" />
+              <Img photo={p} w={900} eager={i < 2} className="absolute inset-0 h-full w-full object-cover" />
             </button>
           ))}
         </div>
-        {label && (
-          <span className="pointer-events-none absolute left-2 top-2 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur">
-            {label}
-          </span>
-        )}
-        <span className="pointer-events-none absolute right-2 top-2 rounded-full bg-black/60 px-2 py-1 text-[11px] font-semibold tabular-nums text-white backdrop-blur">
-          {idx + 1} / {photos.length}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
+        {label && <span className="glass-chip pointer-events-none absolute left-3 top-3">{label}</span>}
+        <span className="glass-chip pointer-events-none absolute right-3 top-3 !px-2">
+          <IconExpand size={13} />
         </span>
-        <span className="pointer-events-none absolute bottom-2 right-2 rounded-full bg-white/90 px-2 py-1 text-[11px] font-semibold text-slate-800">
-          ⤢ Celá obrazovka
-        </span>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 px-3.5 pb-3">
+          <p className="line-clamp-2 text-[14px] font-semibold leading-snug text-white drop-shadow">{cur?.caption}</p>
+          {photos.length > 1 && (
+            <div className="mt-2 flex gap-1">
+              {photos.map((p, i) => (
+                <span key={p.src} className={`h-1 rounded-full transition-all ${i === idx ? 'w-5 bg-white' : 'w-1.5 bg-white/45'}`} />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
       {cur && (
-        <div className="mt-2 space-y-0.5 px-0.5">
-          <p className="text-sm font-medium text-slate-800">{cur.caption}</p>
+        <div className="mt-1.5 px-1">
           <Credit photo={cur} />
         </div>
       )}
@@ -127,28 +150,18 @@ export function Lightbox({ photos, start, onClose }: { photos: Photo[]; start: n
       if (e.key === 'ArrowLeft') el.scrollBy({ left: -el.clientWidth, behavior: 'smooth' })
     }
     window.addEventListener('keydown', onKey)
-    const prev = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    return () => {
-      window.removeEventListener('keydown', onKey)
-      document.body.style.overflow = prev
-    }
+    return () => window.removeEventListener('keydown', onKey)
   }, [onClose])
 
   const cur = photos[idx] ?? photos[0]
   return createPortal(
-    <div className="fixed inset-0 z-[2000] flex flex-col bg-black" role="dialog" aria-modal="true" aria-label="Galerie fotek">
-      <div className="flex items-center justify-between px-4 pb-2 pt-[max(env(safe-area-inset-top),12px)] text-white">
-        <span className="text-sm font-semibold tabular-nums">
+    <div className="lightbox fixed inset-0 z-[2000] flex flex-col bg-black" role="dialog" aria-modal="true" aria-label="Galerie fotek">
+      <div className="flex items-center justify-between px-4 pb-2 pt-[max(env(safe-area-inset-top),14px)] text-white">
+        <span className="text-[13px] font-semibold tabular-nums text-white/80">
           {idx + 1} / {photos.length}
         </span>
-        <button
-          type="button"
-          onClick={onClose}
-          className="grid h-10 w-10 place-items-center rounded-full bg-white/15 text-xl"
-          aria-label="Zavřít galerii"
-        >
-          ✕
+        <button type="button" onClick={onClose} className="grid h-10 w-10 place-items-center rounded-full bg-white/15 backdrop-blur" aria-label="Zavřít galerii">
+          <IconClose size={20} />
         </button>
       </div>
       <div
@@ -161,15 +174,13 @@ export function Lightbox({ photos, start, onClose }: { photos: Photo[]; start: n
       >
         {photos.map((p) => (
           <div key={p.src} className="flex h-full w-full shrink-0 snap-center items-center justify-center">
-            <Img photo={p} w={1600} className="max-h-full max-w-full object-contain" />
+            <Img photo={p} w={1600} eager className="max-h-full max-w-full object-contain" />
           </div>
         ))}
       </div>
-      <div className="space-y-1 px-4 pb-[max(env(safe-area-inset-bottom),16px)] pt-3">
-        {KIND_LABEL[cur.kind] && (
-          <span className="inline-block rounded-full bg-white/15 px-2 py-0.5 text-[11px] font-semibold text-white">{KIND_LABEL[cur.kind]}</span>
-        )}
-        <p className="text-sm font-medium text-white">{cur.caption}</p>
+      <div className="space-y-1 px-5 pb-[max(env(safe-area-inset-bottom),18px)] pt-3">
+        {KIND_LABEL[cur.kind] && <span className="glass-chip">{KIND_LABEL[cur.kind]}</span>}
+        <p className="text-[15px] font-semibold leading-snug text-white">{cur.caption}</p>
         <Credit photo={cur} dark />
       </div>
     </div>,

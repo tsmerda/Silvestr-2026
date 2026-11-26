@@ -92,7 +92,7 @@ export function Countdown() {
   if (c.done)
     return (
       <div className="nye-hero rounded-2xl p-4 text-center text-white">
-        <div className="text-2xl font-black">Šťastný nový rok 2027! 🥂</div>
+        <div className="text-2xl font-black">Šťastný nový rok 2027!</div>
       </div>
     )
   const cell = (n: number, l: string) => (
