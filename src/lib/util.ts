@@ -24,6 +24,7 @@ const original = (src: string) => encodeURI(decodeURI(src))
  * zmenšovač wsrv.nl; když selže, načte se originál. Commons jde napřímo.
  */
 export function photoSources(p: Photo, w: number): string[] {
+  if (p.local) return [p.src]
   if (p.direct) return [p.src, wsrv(p.src, w)]
   return [wsrv(p.src, w), original(p.src)]
 }

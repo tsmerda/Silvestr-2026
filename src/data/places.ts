@@ -27,6 +27,8 @@ export type Photo = {
   license?: string
   /** Fotky z Commons se načítají napřímo, ostatní přes zmenšovač wsrv.nl. */
   direct?: boolean
+  /** Fotka uložená přímo v appce (public/photos) – jen otevřeně licencované. */
+  local?: boolean
 }
 
 export type Category = 'base' | 'apres' | 'party' | 'ski'
@@ -182,7 +184,7 @@ export const places: Place[] = [
       { src: myto('VEČERKO - MYTO - -1 - kópia.jpg'), caption: 'Lyžaři pod svahem během večerního lyžování', credit: 'Mýto Ski & Bike (oficiální web)', sourceUrl: SRC.mytoVecer, kind: 'venue' },
       { src: myto('Myto_ski_and_bike_2_2.jpg'), caption: 'Pohled na celý areál Mýta v zimě', credit: 'Mýto Ski & Bike (oficiální web)', sourceUrl: SRC.mytoGaleria, kind: 'venue' },
       { src: myto('promo_foto_Myto_ski_and_bike_38_3.jpg'), caption: 'Parta na horní části sjezdovky', credit: 'Mýto Ski & Bike (oficiální web)', sourceUrl: SRC.mytoGaleria, kind: 'venue' },
-      { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/976_44_M%C3%BDto_pod_%C4%8Eumbierom%2C_Slovakia_-_panoramio.jpg/1280px-976_44_M%C3%BDto_pod_%C4%8Eumbierom%2C_Slovakia_-_panoramio.jpg', caption: 'Sjezdovka Mýta s obcí a hřebenem Nízkých Tater v pozadí', credit: 'Michal Gorski, Wikimedia Commons', sourceUrl: 'https://commons.wikimedia.org/wiki/File:976_44_M%C3%BDto_pod_%C4%8Eumbierom,_Slovakia_-_panoramio.jpg', kind: 'venue', license: 'CC BY-SA 3.0', direct: true },
+      { src: 'photos/commons-myto-sjezdovka.webp', local: true, caption: 'Sjezdovka Mýta s obcí a hřebenem Nízkých Tater v pozadí', credit: 'Michal Gorski, Wikimedia Commons', sourceUrl: 'https://commons.wikimedia.org/wiki/File:976_44_M%C3%BDto_pod_%C4%8Eumbierom,_Slovakia_-_panoramio.jpg', kind: 'venue', license: 'CC BY-SA 3.0, zmenšeno' },
       { src: myto('restauracia_myto_ski_and_bike_7.jpg'), caption: 'Interiér samoobslužné restaurace pod svahem', credit: 'Mýto Ski & Bike (oficiální web)', sourceUrl: SRC.mytoStrava, kind: 'venue' },
     ],
   },
@@ -229,8 +231,8 @@ export const places: Place[] = [
     },
     photos: [
       { src: jasna('apreski_krupova__4_.jpg'), caption: 'Oranžový stan baru Krupová s posezením u sjezdovky', credit: 'Jasná Nízke Tatry (oficiální web)', sourceUrl: SRC.jasnaKrupova, kind: 'venue' },
-      { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Chopok_z_Kosodreviny.JPG/1280px-Chopok_z_Kosodreviny.JPG', caption: 'Chopok juh nad Krupovou (léto) – kam vede kabinka', credit: 'Pe3kZA, Wikimedia Commons', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Chopok_z_Kosodreviny.JPG', kind: 'area', license: 'CC BY-SA 4.0', direct: true },
-      { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Chata_Kosodrevina.JPG/1280px-Chata_Kosodrevina.JPG', caption: 'Kosodrevina – horní stanice kabinky z Krupové (léto)', credit: 'Pe3kZA, Wikimedia Commons', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Chata_Kosodrevina.JPG', kind: 'area', license: 'CC BY-SA 4.0', direct: true },
+      { src: 'photos/commons-chopok-z-kosodreviny.webp', local: true, caption: 'Chopok juh nad Krupovou (léto) – kam vede kabinka', credit: 'Pe3kZA, Wikimedia Commons', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Chopok_z_Kosodreviny.JPG', kind: 'area', license: 'CC BY-SA 4.0, zmenšeno' },
+      { src: 'photos/commons-chata-kosodrevina.webp', local: true, caption: 'Kosodrevina – horní stanice kabinky z Krupové (léto)', credit: 'Pe3kZA, Wikimedia Commons', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Chata_Kosodrevina.JPG', kind: 'area', license: 'CC BY-SA 4.0, zmenšeno' },
     ],
   },
   {
@@ -259,8 +261,8 @@ export const places: Place[] = [
     },
     photos: [
       { src: jasna('IMG_1053.jpg'), caption: 'Funibar s kupolí a terasou plnou lyžařů na Priehybě', credit: 'Jasná Nízke Tatry (oficiální web)', sourceUrl: SRC.jasnaFunibar, kind: 'venue' },
-      { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Jasn%C3%A1_-_Priehyba-_6-seda%C4%8Dkov%C3%A1_lanovka.JPG/1280px-Jasn%C3%A1_-_Priehyba-_6-seda%C4%8Dkov%C3%A1_lanovka.JPG', caption: 'Šestisedačka na Priehybu nad sjezdovkou Jasné', credit: 'Pudelek, Wikimedia Commons', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Jasn%C3%A1_-_Priehyba-_6-seda%C4%8Dkov%C3%A1_lanovka.JPG', kind: 'area', license: 'CC BY-SA 3.0', direct: true },
-      { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Chopok_-_Jasn%C3%A1_Ski_Resort.JPG/1280px-Chopok_-_Jasn%C3%A1_Ski_Resort.JPG', caption: 'Vrchol Chopku – přechod z jihu na sever', credit: 'Pudelek (Marcin Szala), Wikimedia Commons', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Chopok_-_Jasn%C3%A1_Ski_Resort.JPG', kind: 'area', license: 'CC BY-SA 3.0', direct: true },
+      { src: 'photos/commons-priehyba-lanovka.webp', local: true, caption: 'Šestisedačka na Priehybu nad sjezdovkou Jasné', credit: 'Pudelek, Wikimedia Commons', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Jasn%C3%A1_-_Priehyba-_6-seda%C4%8Dkov%C3%A1_lanovka.JPG', kind: 'area', license: 'CC BY-SA 3.0, zmenšeno' },
+      { src: 'photos/commons-chopok-jasna.webp', local: true, caption: 'Vrchol Chopku – přechod z jihu na sever', credit: 'Pudelek (Marcin Szala), Wikimedia Commons', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Chopok_-_Jasn%C3%A1_Ski_Resort.JPG', kind: 'area', license: 'CC BY-SA 3.0, zmenšeno' },
     ],
   },
   {
