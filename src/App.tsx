@@ -242,6 +242,7 @@ export default function App() {
           <PlaceCompact key={p.id} place={p} active={p.id === selectedId} onClick={() => select(p.id)} />
         ))}
       </div>
+      <a href="./silvestr-2026.kml" download className="btn-ghost mt-3">📍 Piny pro Google My Maps (KML)</a>
     </section>
   )
 
@@ -279,6 +280,7 @@ export default function App() {
                 {(filter === 'vse' ? [CHATA, ...filtered] : filtered).map((p) => (
                   <PlaceCompact key={p.id} place={p} active={p.id === selectedId} onClick={() => select(p.id)} />
                 ))}
+                <a href="./silvestr-2026.kml" download className="btn-ghost mt-3">📍 Piny pro Google My Maps (KML)</a>
               </div>
             ) : (
               <NyePanel variant={variant} onFocus={focusFromPlan} />

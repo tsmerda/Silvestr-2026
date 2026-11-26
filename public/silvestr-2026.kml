@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Silvestr 2026</name>
+    <description>Chata Lenka, Mýto pod Ďumbierom · 30. 12. 2026 – 2. 1. 2027 · https://tsmerda.github.io/korutany-2026/</description>
+    <Style id="base"><IconStyle><color>ff2a1b0f</color><scale>1.4</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+    <Style id="apres"><IconStyle><color>ff1673f9</color><scale>1.1</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+    <Style id="party"><IconStyle><color>ffaf1ca2</color><scale>1.1</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+    <Style id="ski"><IconStyle><color>ffc78402</color><scale>1.1</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+    <Style id="sub"><IconStyle><color>ffb8a394</color><scale>0.8</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
+    <Style id="car"><LineStyle><color>ffeb6325</color><width>5</width></LineStyle></Style>
+    <Style id="foot"><LineStyle><color>ff4aa316</color><width>5</width></LineStyle></Style>
+    
+    <Folder>
+      <name>Chata a après-ski</name>
+      <Placemark>
+        <name>🏠 Chata Lenka – naše základna</name>
+        <description>Naše základna · Mýto pod Ďumbierom
+
+Chata na slunném svahu s výhledem na sjezdovky Mýta. 4 ložnice, terasa s grilem, parkování přímo u chaty. Na sjezdovku a do après-ski baru je to asi 1 km pěšky.
+
+Doprava z chaty: Parkování přímo u chaty (5 míst). Skibus „chaty → Mýto Ski &amp; Bike“ jezdí pá–ne, v jiné dny se zeptej majitele.
+
+Průvodce: https://tsmerda.github.io/korutany-2026/</description>
+        <styleUrl>#base</styleUrl>
+        <Point><coordinates>19.612108,48.847014,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>🍺 Mýto Ski &amp; Bike – après-ski bar pod svahem</name>
+        <description>Nejbližší areál a bar pod svahem
+
+Venkovní après-ski bar a samoobslužná restaurace přímo pod svahem, hned vedle nástupu na čtyřsedačku. Dvě sjezdovky po 1 420 m, večer obě osvětlené. V sezóně tu pořádají Après Ski Sunset Party s DJem během večerního lyžování.
+
+❔ ZATÍM NEPOTVRZENO: Silvestr v Mýtě – 31. 12. 2026.
+
+💡 TIP: Večerní lyžování v Mýtě – 30. 12. 2026 od 18:00. Lístky: https://tickets.kopeczabavy.sk/sk/Tickets
+
+Doprava z chaty: Pěšky z chaty po silnici dolů a podél hlavní cesty 72. Autem 2 min, velké parkoviště zdarma u areálu.
+
+Instagram: https://www.instagram.com/mytoskibike/
+
+Průvodce: https://tsmerda.github.io/korutany-2026/</description>
+        <styleUrl>#apres</styleUrl>
+        <Point><coordinates>19.620964,48.845702,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>🍺 Chopok Juh – Après-ski bar Krupová</name>
+        <description>Bar u dolní stanice lanovky
+
+Après-ski bar u nástupní stanice kabinky Krupová – Kosodrevina (1 084 m). Hudba celý den, 80 míst, otevřeno během provozu lanovek. Ideální konec dne na jižní straně Chopku.
+
+Doprava z chaty: Autem na parkoviště Krupová (12 min), bar je pár kroků od parkoviště u dolní stanice.
+
+Instagram: https://www.instagram.com/jasna_nizke_tatry/
+
+Průvodce: https://tsmerda.github.io/korutany-2026/</description>
+        <styleUrl>#apres</styleUrl>
+        <Point><coordinates>19.597635,48.922106,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>🍸 Priehyba – Funibar (après-ski na lyžích)</name>
+        <description>Tip na après-ski během lyžařského dne
+
+Bar s prosklenou kupolí na Priehybě (1 342 m) na severní straně Chopku, u nástupu na Funitel. Na lyžařský den: z Krupové lanovkami nahoru na Chopok a sjet na sever. Autem je to přes Čertovicu přes hodinu.
+
+Doprava z chaty: Autem na Krupovou (12 min), pak lanovkou Krupová → Kosodrevina → Chopok a na lyžích dolů na Priehybu.
+
+Instagram: https://www.instagram.com/jasna_nizke_tatry/
+
+Průvodce: https://tsmerda.github.io/korutany-2026/</description>
+        <styleUrl>#apres</styleUrl>
+        <Point><coordinates>19.589341,48.962892,0</coordinates></Point>
+      </Placemark>
+    </Folder>
+    
+    <Folder>
+      <name>Silvestr 31. 12.</name>
+      <Placemark>
+        <name>🦖 Sky Bar Brezno – Jurassic Night 31. 12.</name>
+        <description>Jurassic Night · Brezno
+
+Prosklený bar ve stylu art deco na střeše muzea aut v Brezně, s terasou a výhledem na Nízké Tatry. Na Silvestra tu bude tematická párty Jurassic Night s výstavou dinosaurů a ohňostrojem.
+
+✅ POTVRZENO: Jurassic Night – Silvestr v Sky Baru – 31. 12. 2026 od 18:00. Galavečer od 18:00 za 59 € / os., Silvestrovská párty od 20:00 za 29 € / os.. Rezervace: +421910446447
+
+Doprava z chaty: Autem z chaty po silnici 72 do Brezna, 18 min.
+
+Instagram: https://www.instagram.com/doubleredcars/
+
+Průvodce: https://tsmerda.github.io/korutany-2026/</description>
+        <styleUrl>#party</styleUrl>
+        <Point><coordinates>19.631743,48.798761,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>🎆 Happy End Jasná – Silvestr s KALI 31. 12.</name>
+        <description>Silvestr s KALI &amp; Peter Pann · Biela Púť
+
+Největší klub na Liptově – přes den ski-in/ski-out restaurace pod Biela Púť, večer Happy End Music Club se zvukem Funktion-One. Je na severní straně Chopku, chata je na jižní: autem přes Čertovicu.
+
+✅ POTVRZENO: Silvestr s KALI &amp; Peter Pann – 31. 12. 2026 od 21:00. Vstupné: 1. vlna online 39 €, 2. vlna online 49 €, Na místě 59 €. Lístky: https://gopass.travel/CZ/silvestrovska-party-s-kalim-v-happy-end-jasna-d7_22491
+
+Doprava z chaty: Autem přes průsmyk Čertovica (1 238 m) a Liptov, asi 67 km. Silnice přes Čertovicu bývá v noci zasněžená.
+
+Instagram: https://www.instagram.com/happyendjasna/
+
+Průvodce: https://tsmerda.github.io/korutany-2026/</description>
+        <styleUrl>#party</styleUrl>
+        <Point><coordinates>19.583007,48.971184,0</coordinates></Point>
+      </Placemark>
+    </Folder>
+    
+    <Folder>
+      <name>Lyžování</name>
+      <Placemark>
+        <name>⛷️ Ski Tále – lyžování</name>
+        <description>Lyžování 4 km od chaty
+
+Rodinné středisko s 6 vleky (bez lanovky) a výhledem na Chopok. Modré i červené sjezdovky, půjčovna a škola. Dobrá volba na rychlé dopoledne nebo když je v Mýtě plno.
+
+Doprava z chaty: Autem přes Bystrou, parkoviště u sjezdovek zdarma.
+
+Instagram: https://www.instagram.com/resort_tale_official/
+
+Průvodce: https://tsmerda.github.io/korutany-2026/</description>
+        <styleUrl>#ski</styleUrl>
+        <Point><coordinates>19.58979,48.86468,0</coordinates></Point>
+      </Placemark>
+    </Folder>
+    
+    <Folder>
+      <name>Parkoviště a lanovky</name>
+      <Placemark>
+        <name>🚡 Mýto Ski &amp; Bike – Lanovka</name>
+        <description>Lanovka u místa Mýto Ski &amp; Bike – après-ski bar.</description>
+        <styleUrl>#sub</styleUrl>
+        <Point><coordinates>19.620664,48.845413,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>🅿️ Mýto Ski &amp; Bike – Parkoviště</name>
+        <description>Parkoviště u místa Mýto Ski &amp; Bike – après-ski bar.</description>
+        <styleUrl>#sub</styleUrl>
+        <Point><coordinates>19.621532,48.846307,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>🅿️ Ski Tále – Parkoviště</name>
+        <description>Parkoviště u místa Ski Tále.</description>
+        <styleUrl>#sub</styleUrl>
+        <Point><coordinates>19.593493,48.867686,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>🅿️ Chopok Juh – Parkoviště</name>
+        <description>Parkoviště u místa Chopok Juh – Après-ski bar Krupová.</description>
+        <styleUrl>#sub</styleUrl>
+        <Point><coordinates>19.598742,48.92157,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>🅿️ Happy End Jasná – P2 Biela Púť</name>
+        <description>P2 Biela Púť u místa Happy End Jasná.</description>
+        <styleUrl>#sub</styleUrl>
+        <Point><coordinates>19.584702,48.970803,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>🅿️ Happy End Jasná – P4 Lúčky</name>
+        <description>P4 Lúčky u místa Happy End Jasná.</description>
+        <styleUrl>#sub</styleUrl>
+        <Point><coordinates>19.592009,48.979952,0</coordinates></Point>
+      </Placemark>
+    </Folder>
+    
+    <Folder>
+      <name>Trasy z chaty</name>
+      <Placemark>
+        <name>🚶 Pěšky z chaty do Mýta (1.06 km, 14 min)</name>
+        <description>Pěší trasa po cestě z chaty k après-ski baru.</description>
+        <styleUrl>#foot</styleUrl>
+        <LineString><tessellate>1</tessellate><coordinates>19.61219,48.84682,0 19.6109,48.8465,0 19.61074,48.84638,0 19.6102,48.8462,0 19.61038,48.84612,0 19.61117,48.84595,0 19.61249,48.8458,0 19.61289,48.84555,0 19.61309,48.84531,0 19.6131,48.84519,0 19.61628,48.84536,0 19.62059,48.84628,0 19.62079,48.8459,0 19.62076,48.84577,0 19.62096,48.84577,0</coordinates></LineString>
+      </Placemark>
+      <Placemark>
+        <name>🚗 Chata → Brezno, Sky Bar (13.42 km, 18 min)</name>
+        <description>Silnice 72 do Brezna.</description>
+        <styleUrl>#car</styleUrl>
+        <LineString><tessellate>1</tessellate><coordinates>19.61219,48.84682,0 19.6102,48.8462,0 19.61249,48.8458,0 19.61289,48.84555,0 19.6131,48.84519,0 19.61032,48.84501,0 19.60909,48.84472,0 19.60676,48.84381,0 19.60629,48.84389,0 19.60558,48.84313,0 19.60463,48.84252,0 19.60311,48.84205,0 19.60037,48.84163,0 19.59821,48.84148,0 19.59709,48.84155,0 19.59624,48.84127,0 19.59244,48.8407,0 19.59071,48.84023,0 19.58854,48.83928,0 19.58723,48.83842,0 19.58591,48.83731,0 19.58518,48.83714,0 19.58284,48.83694,0 19.58192,48.83669,0 19.581,48.83632,0 19.57905,48.83504,0 19.57825,48.83483,0 19.57654,48.83476,0 19.57529,48.83409,0 19.56942,48.83159,0 19.56576,48.82895,0 19.5632,48.82617,0 19.5626,48.82531,0 19.56167,48.823,0 19.56124,48.81958,0 19.5608,48.81771,0 19.5617,48.81679,0 19.56238,48.8164,0 19.56432,48.81635,0 19.56502,48.81604,0 19.56558,48.815,0 19.56716,48.81327,0 19.56798,48.81338,0 19.57167,48.81486,0 19.57297,48.8151,0 19.57329,48.81433,0 19.57302,48.81405,0 19.57359,48.81266,0 19.58235,48.81336,0 19.58829,48.81273,0 19.59276,48.81269,0 19.59613,48.81213,0 19.60146,48.812,0 19.60432,48.81154,0 19.60577,48.81108,0 19.61514,48.80722,0 19.61627,48.80657,0 19.61849,48.80494,0 19.61962,48.80439,0 19.63067,48.80024,0 19.63904,48.7978,0 19.63861,48.79764,0 19.63681,48.79812,0 19.63437,48.79799,0 19.63355,48.79827,0 19.63306,48.79768,0 19.63278,48.7976,0 19.63022,48.79787,0 19.63049,48.79832,0</coordinates></LineString>
+      </Placemark>
+      <Placemark>
+        <name>🚗 Chata → Happy End Jasná přes Čertovicu (67.46 km, 68 min)</name>
+        <description>Klub je na severní straně Chopku – silnice přes hřeben nevede, jede se přes průsmyk Čertovica a Liptov.</description>
+        <styleUrl>#car</styleUrl>
+        <LineString><tessellate>1</tessellate><coordinates>19.61219,48.84682,0 19.6109,48.8465,0 19.61028,48.84615,0 19.61249,48.8458,0 19.61289,48.84555,0 19.6131,48.84519,0 19.6161,48.84534,0 19.62346,48.84694,0 19.62723,48.84792,0 19.62817,48.84835,0 19.63012,48.85,0 19.6329,48.85298,0 19.63307,48.85495,0 19.63418,48.85711,0 19.63514,48.85816,0 19.63612,48.859,0 19.63799,48.85997,0 19.64114,48.8631,0 19.64345,48.86486,0 19.64682,48.86647,0 19.65225,48.87004,0 19.65312,48.87114,0 19.65357,48.87342,0 19.65394,48.87435,0 19.65649,48.87846,0 19.65731,48.87918,0 19.66079,48.88158,0 19.66325,48.88253,0 19.66529,48.88359,0 19.66689,48.88526,0 19.66968,48.88588,0 19.67224,48.88716,0 19.67463,48.88737,0 19.67656,48.88782,0 19.67725,48.88805,0 19.67864,48.88889,0 19.68109,48.88952,0 19.68235,48.88951,0 19.68763,48.88852,0 19.68859,48.88861,0 19.68953,48.88922,0 19.68981,48.89081,0 19.6903,48.89141,0 19.69167,48.89213,0 19.69283,48.89244,0 19.69579,48.893,0 19.69652,48.89301,0 19.69727,48.89278,0 19.69886,48.89192,0 19.69985,48.89177,0 19.70382,48.89299,0 19.70769,48.89384,0 19.70947,48.89392,0 19.70988,48.89406,0 19.70998,48.89454,0 19.70924,48.89481,0 19.70629,48.89493,0 19.70498,48.89449,0 19.70332,48.89427,0 19.70268,48.89439,0 19.70226,48.89467,0 19.70023,48.90126,0 19.70032,48.90199,0 19.70106,48.90299,0 19.70062,48.90371,0 19.7008,48.90405,0 19.70129,48.90411,0 19.70168,48.90379,0 19.70101,48.90203,0 19.70118,48.90131,0 19.70336,48.89829,0 19.70388,48.89778,0 19.70441,48.89764,0 19.70495,48.89778,0 19.70604,48.89881,0 19.7078,48.89987,0 19.70891,48.89985,0 19.71069,48.89899,0 19.71135,48.89897,0 19.71211,48.89919,0 19.71316,48.90005,0 19.71434,48.9021,0 19.71476,48.90245,0 19.71558,48.90244,0 19.71814,48.90143,0 19.71906,48.90147,0 19.72286,48.90234,0 19.72664,48.90383,0 19.72923,48.90453,0 19.73207,48.90513,0 19.73425,48.90521,0 19.73598,48.90552,0 19.73819,48.90672,0 19.74076,48.90718,0 19.7416,48.90766,0 19.7419,48.90817,0 19.74196,48.9091,0 19.74132,48.91029,0 19.74186,48.91107,0 19.74179,48.91193,0 19.7431,48.91336,0 19.74371,48.91458,0 19.74455,48.91527,0 19.74546,48.91788,0 19.74544,48.91832,0 19.74504,48.91875,0 19.74455,48.91895,0 19.74183,48.91897,0 19.73764,48.91779,0 19.73599,48.91695,0 19.7354,48.91696,0 19.73524,48.91739,0 19.73668,48.91889,0 19.7396,48.92118,0 19.73973,48.92143,0 19.73944,48.9219,0 19.73745,48.92278,0 19.73734,48.92319,0 19.7377,48.92345,0 19.7381,48.92348,0 19.7411,48.9229,0 19.74323,48.92296,0 19.74429,48.92322,0 19.74964,48.92519,0 19.75065,48.92575,0 19.7512,48.92639,0 19.75174,48.92833,0 19.75275,48.9299,0 19.75646,48.9341,0 19.75715,48.93802,0 19.75684,48.94114,0 19.75803,48.94285,0 19.76003,48.94403,0 19.7613,48.94525,0 19.76315,48.9464,0 19.76837,48.94893,0 19.77259,48.95265,0 19.77311,48.95338,0 19.77337,48.95791,0 19.77476,48.9662,0 19.77655,48.97026,0 19.77744,48.97685,0 19.77722,48.97718,0 19.7766,48.97749,0 19.77324,48.97826,0 19.77116,48.97834,0 19.77045,48.97853,0 19.76809,48.97993,0 19.76699,48.98086,0 19.76431,48.9822,0 19.76246,48.98339,0 19.75981,48.98579,0 19.75934,48.98683,0 19.75795,48.98827,0 19.75779,48.98884,0 19.75948,48.99377,0 19.7609,48.99562,0 19.76314,48.99787,0 19.7664,49.00191,0 19.76647,49.00238,0 19.76582,49.0045,0 19.76667,49.00613,0 19.76713,49.00854,0 19.77039,49.01213,0 19.77604,49.02249,0 19.78524,49.03206,0 19.78535,49.03246,0 19.78517,49.03276,0 19.78474,49.03301,0 19.78394,49.03318,0 19.78197,49.03415,0 19.78095,49.03443,0 19.76667,49.03524,0 19.76305,49.03483,0 19.76142,49.03485,0 19.7603,49.0351,0 19.75457,49.03707,0 19.75274,49.03751,0 19.74305,49.03834,0 19.73738,49.03927,0 19.73498,49.03926,0 19.73016,49.03852,0 19.72964,49.03927,0 19.73079,49.0405,0 19.73193,49.04238,0 19.73215,49.04314,0 19.73193,49.04448,0 19.73155,49.04475,0 19.73136,49.0452,0 19.73076,49.04742,0 19.73078,49.04801,0 19.73383,49.05461,0 19.73486,49.05539,0 19.73593,49.0558,0 19.73963,49.05641,0 19.74234,49.05709,0 19.7454,49.05848,0 19.74818,49.06033,0 19.74904,49.06044,0 19.74938,49.06023,0 19.74944,49.06001,0 19.74927,49.05972,0 19.74897,49.05962,0 19.74437,49.05941,0 19.7398,49.05878,0 19.73553,49.05779,0 19.72429,49.05437,0 19.72145,49.05381,0 19.71818,49.05345,0 19.71415,49.05344,0 19.71012,49.05389,0 19.70664,49.05469,0 19.70015,49.05674,0 19.6985,49.0571,0 19.69616,49.0574,0 19.69408,49.05748,0 19.69181,49.05737,0 19.68338,49.05644,0 19.68167,49.05645,0 19.67921,49.05667,0 19.66567,49.05839,0 19.66149,49.05917,0 19.65743,49.06037,0 19.6477,49.06444,0 19.64472,49.06551,0 19.64168,49.06641,0 19.63863,49.06712,0 19.62954,49.06876,0 19.62731,49.06936,0 19.62071,49.07159,0 19.61747,49.0724,0 19.61385,49.07292,0 19.60722,49.07325,0 19.60402,49.07354,0 19.60237,49.07394,0 19.60085,49.07454,0 19.60037,49.07502,0 19.59997,49.07583,0 19.59958,49.07612,0 19.59909,49.07622,0 19.59839,49.07613,0 19.59698,49.07515,0 19.59548,49.0729,0 19.59334,49.0718,0 19.59231,49.07105,0 19.59008,49.06806,0 19.58779,49.06552,0 19.58587,49.06283,0 19.58553,49.06229,0 19.58509,49.06066,0 19.58353,49.05857,0 19.57781,49.05374,0 19.57765,49.05314,0 19.57854,49.04736,0 19.57846,49.04061,0 19.57724,49.03724,0 19.57324,49.03303,0 19.57296,49.03238,0 19.57261,49.02669,0 19.57381,49.02237,0 19.57431,49.02175,0 19.5776,49.01907,0 19.58103,49.01534,0 19.58246,49.01425,0 19.58304,49.01329,0 19.5842,49.01206,0 19.5844,49.01158,0 19.58434,49.0109,0 19.58279,49.00764,0 19.58249,49.00628,0 19.58166,49.00491,0 19.58211,49.00351,0 19.58191,49.00176,0 19.58296,49.00044,0 19.58285,48.99938,0 19.58315,48.99795,0 19.58272,48.99643,0 19.58297,48.99607,0 19.58374,48.99562,0 19.58461,48.99441,0 19.58574,48.99371,0 19.58638,48.99296,0 19.58763,48.99227,0 19.58856,48.9914,0 19.58933,48.99047,0 19.59006,48.98867,0 19.59175,48.9874,0 19.59248,48.98653,0 19.59279,48.98581,0 19.59241,48.98446,0 19.59255,48.98202,0 19.59234,48.98027,0 19.59249,48.97937,0 19.5931,48.97835,0 19.59502,48.97674,0 19.59618,48.97502,0 19.59787,48.97346,0 19.59768,48.97315,0 19.59718,48.97308,0 19.59611,48.97386,0 19.59485,48.9743,0 19.59413,48.97432,0 19.59288,48.97359,0 19.59208,48.9725,0 19.59073,48.97245,0 19.58978,48.97182,0 19.58863,48.97176,0 19.58749,48.97084,0 19.58687,48.97085,0 19.58543,48.97154,0 19.58504,48.97138,0 19.5846,48.9708,0</coordinates></LineString>
+      </Placemark>
+      <Placemark>
+        <name>🚗 Chata → Krupová (10.4 km, 12 min)</name>
+        <description>Parkoviště u dolní stanice lanovky Chopok Juh.</description>
+        <styleUrl>#car</styleUrl>
+        <LineString><tessellate>1</tessellate><coordinates>19.61219,48.84682,0 19.6102,48.8462,0 19.61249,48.8458,0 19.61289,48.84555,0 19.6131,48.84519,0 19.61032,48.84501,0 19.60909,48.84472,0 19.60676,48.84381,0 19.6064,48.84387,0 19.60589,48.84551,0 19.60586,48.84744,0 19.60504,48.84865,0 19.60519,48.85084,0 19.60506,48.85159,0 19.60443,48.85261,0 19.60464,48.85358,0 19.60416,48.85429,0 19.60396,48.85595,0 19.60354,48.85709,0 19.60303,48.85787,0 19.60268,48.85915,0 19.60346,48.86148,0 19.60447,48.86618,0 19.60479,48.86878,0 19.60544,48.87076,0 19.605,48.87445,0 19.60444,48.87542,0 19.60403,48.87692,0 19.60432,48.87859,0 19.60389,48.88062,0 19.60393,48.88197,0 19.60295,48.88303,0 19.60204,48.88524,0 19.60203,48.88607,0 19.60242,48.88686,0 19.60253,48.88832,0 19.6003,48.89369,0 19.60027,48.8942,0 19.60057,48.8951,0 19.59981,48.8962,0 19.59895,48.89806,0 19.59927,48.89927,0 19.59922,48.90025,0 19.59958,48.9011,0 19.59844,48.90342,0 19.59839,48.90399,0 19.59896,48.90555,0 19.59928,48.90573,0 19.60084,48.90609,0 19.60115,48.90637,0 19.60041,48.90801,0 19.60056,48.90989,0 19.6001,48.91087,0 19.60032,48.91217,0 19.59976,48.91288,0 19.60112,48.91424,0 19.60136,48.91512,0 19.60125,48.91557,0 19.6004,48.91665,0 19.59909,48.9202,0 19.5984,48.92068,0 19.59762,48.92092,0 19.5971,48.92174,0 19.59756,48.92176,0 19.59878,48.92116,0 19.5995,48.92096,0 19.59973,48.92115,0 19.59875,48.92158,0</coordinates></LineString>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

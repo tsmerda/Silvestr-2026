@@ -63,3 +63,13 @@ Workflow `.github/workflows/deploy.yml` při pushi do `main` postaví appku a na
 `https://tsmerda.github.io/korutany-2026/`. Jednorázově je potřeba v repozitáři:
 **Settings → Pages → Source: GitHub Actions** (u soukromého repozitáře jen s placeným plánem,
 jinak repo přepnout na veřejné).
+
+## Piny do Google Map
+
+`npm run kml` vygeneruje z `src/data/places.ts` soubor `public/silvestr-2026.kml` (místa, parkoviště,
+lanovky a trasy z chaty) a `public/silvestr-2026-odkazy.txt` (odkazy na místa v Google Maps).
+
+- **Sdílená mapa:** [Google My Maps](https://www.google.com/mymaps) → Vytvořit novou mapu → Importovat → vybrat
+  `silvestr-2026.kml` → Sdílet. Mapa se otevře i v appce Google Maps (Uložené → Mapy).
+- **Seznam „Silvestr 2026“ v appce Google Maps:** otevři odkazy ze `silvestr-2026-odkazy.txt` a u každého
+  místa klepni na Uložit → Silvestr 2026. Seznam pak jde nasdílet.
