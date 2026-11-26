@@ -2,7 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <name>Silvestr 2026</name>
-    <description>Chata Lenka, Mýto pod Ďumbierom · 30. 12. 2026 – 2. 1. 2027 · https://tsmerda.github.io/korutany-2026/</description>
+    <description>Chata Lenka, Mýto pod Ďumbierom · 30. 12. 2026 – 2. 1. 2027 · https://tsmerda.github.io/Silvestr-2026/</description>
     <Style id="base"><IconStyle><color>ff2a1b0f</color><scale>1.4</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
     <Style id="apres"><IconStyle><color>ff1673f9</color><scale>1.1</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
     <Style id="party"><IconStyle><color>ffaf1ca2</color><scale>1.1</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon></IconStyle></Style>
@@ -21,7 +21,7 @@ Chata na slunném svahu s výhledem na sjezdovky Mýta. 4 ložnice, terasa s gri
 
 Doprava z chaty: Parkování přímo u chaty (5 míst). Skibus „chaty → Mýto Ski &amp; Bike“ jezdí pá–ne, v jiné dny se zeptej majitele.
 
-Průvodce: https://tsmerda.github.io/korutany-2026/</description>
+Průvodce: https://tsmerda.github.io/Silvestr-2026/</description>
         <styleUrl>#base</styleUrl>
         <Point><coordinates>19.612108,48.847014,0</coordinates></Point>
       </Placemark>
@@ -39,7 +39,7 @@ Doprava z chaty: Pěšky z chaty po silnici dolů a podél hlavní cesty 72. Aut
 
 Instagram: https://www.instagram.com/mytoskibike/
 
-Průvodce: https://tsmerda.github.io/korutany-2026/</description>
+Průvodce: https://tsmerda.github.io/Silvestr-2026/</description>
         <styleUrl>#apres</styleUrl>
         <Point><coordinates>19.620964,48.845702,0</coordinates></Point>
       </Placemark>
@@ -53,7 +53,7 @@ Doprava z chaty: Autem na parkoviště Krupová (12 min), bar je pár kroků od 
 
 Instagram: https://www.instagram.com/jasna_nizke_tatry/
 
-Průvodce: https://tsmerda.github.io/korutany-2026/</description>
+Průvodce: https://tsmerda.github.io/Silvestr-2026/</description>
         <styleUrl>#apres</styleUrl>
         <Point><coordinates>19.597635,48.922106,0</coordinates></Point>
       </Placemark>
@@ -67,7 +67,7 @@ Doprava z chaty: Autem na Krupovou (12 min), pak lanovkou Krupová → Kosodrevi
 
 Instagram: https://www.instagram.com/jasna_nizke_tatry/
 
-Průvodce: https://tsmerda.github.io/korutany-2026/</description>
+Průvodce: https://tsmerda.github.io/Silvestr-2026/</description>
         <styleUrl>#apres</styleUrl>
         <Point><coordinates>19.589341,48.962892,0</coordinates></Point>
       </Placemark>
@@ -87,7 +87,7 @@ Doprava z chaty: Autem z chaty po silnici 72 do Brezna, 18 min.
 
 Instagram: https://www.instagram.com/doubleredcars/
 
-Průvodce: https://tsmerda.github.io/korutany-2026/</description>
+Průvodce: https://tsmerda.github.io/Silvestr-2026/</description>
         <styleUrl>#party</styleUrl>
         <Point><coordinates>19.631743,48.798761,0</coordinates></Point>
       </Placemark>
@@ -103,7 +103,7 @@ Doprava z chaty: Autem přes průsmyk Čertovica (1 238 m) a Liptov, asi 67 km. 
 
 Instagram: https://www.instagram.com/happyendjasna/
 
-Průvodce: https://tsmerda.github.io/korutany-2026/</description>
+Průvodce: https://tsmerda.github.io/Silvestr-2026/</description>
         <styleUrl>#party</styleUrl>
         <Point><coordinates>19.583007,48.971184,0</coordinates></Point>
       </Placemark>
@@ -121,7 +121,7 @@ Doprava z chaty: Autem přes Bystrou, parkoviště u sjezdovek zdarma.
 
 Instagram: https://www.instagram.com/resort_tale_official/
 
-Průvodce: https://tsmerda.github.io/korutany-2026/</description>
+Průvodce: https://tsmerda.github.io/Silvestr-2026/</description>
         <styleUrl>#ski</styleUrl>
         <Point><coordinates>19.58979,48.86468,0</coordinates></Point>
       </Placemark>

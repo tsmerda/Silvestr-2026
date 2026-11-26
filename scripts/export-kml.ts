@@ -10,7 +10,7 @@ const routes = JSON.parse(readFileSync(new URL('../src/data/routes.json', import
 >
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-const APP = 'https://tsmerda.github.io/korutany-2026/'
+const APP = 'https://tsmerda.github.io/Silvestr-2026/'
 
 const NAMES: Record<string, string> = {
   chata: '🏠 Chata Lenka – naše základna',

@@ -60,7 +60,7 @@ https://router.project-osrm.org/route/v1/driving/19.612108,48.847014;LON,LAT?ove
 ## Nasazení (GitHub Pages)
 
 Workflow `.github/workflows/deploy.yml` při pushi do `main` postaví appku a nasadí ji na
-`https://tsmerda.github.io/korutany-2026/`. Jednorázově je potřeba v repozitáři:
+`https://tsmerda.github.io/Silvestr-2026/`. Jednorázově je potřeba v repozitáři:
 **Settings → Pages → Source: GitHub Actions** (u soukromého repozitáře jen s placeným plánem,
 jinak repo přepnout na veřejné).
 
