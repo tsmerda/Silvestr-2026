@@ -1,102 +1,65 @@
-# Korutany 2026 🌊🚴🍺
+# Silvestr v Mýtě 2026 ❄️🎆
 
-Jednoduchá landing page, která má nalákat partu kluků z Brna na prodloužený
-víkend u rakouských jezer v Korutanech. Žádný backend, žádné databáze – jedna
-stránka, lokální hlasování, hotovo.
+Mobilní průvodce pro partu: **Chata Lenka, Mýto pod Ďumbierom, 30. 12. 2026 – 2. 1. 2027**.
+Po otevření hned vidíš chatu, nejbližší après-ski (Mýto, 14 min pěšky) a fotku místa.
 
-Postavené na **React + Vite + TypeScript + Tailwind CSS 4**.
+- **Mapa** (Leaflet + OpenStreetMap) s výrazným pinem chaty, tlačítky „Zpět na chatu“ a „Celá oblast“.
+- **Vysouvací panel** jako v Apple Maps (dole název, fotka, vzdálenost → tažením nahoru galerie, popis, akce, navigace).
+  Na desktopu je seznam vedle mapy a detail v plovoucí kartě.
+- **Filtry** Nejblíž chatě / Après-ski / Silvestrovské párty / Lyžování – mění mapu i seznam.
+- **Silvestr 31. 12.** – dvě varianty večera (Poblíž chaty → Brezno, Velká klubová párty → Happy End Jasná),
+  trasa tam i zpět, potvrzený program vs. tipy, odpočet do půlnoci.
+- **Galerie** se swipem a celou obrazovkou, u každé fotky popisek, autor a odkaz na zdroj.
+- **Navigace z chaty** v Apple Maps i Google Maps.
 
----
+Stack: React 19, TypeScript, Vite, Tailwind CSS 4, Leaflet.
 
-## 🚀 Jak to spustit
-
-Potřebuješ Node 20+ (ideálně novější).
+## Spuštění
 
 ```bash
 npm install
-npm run dev
+npm run dev       # vývoj
+npm run build     # produkční build do dist/
+npm run preview   # náhled buildu
 ```
 
-Pak otevři adresu, kterou Vite vypíše (defaultně `http://localhost:5173`).
+## Kde se co upravuje
 
-Další příkazy:
+| Co                                   | Kde                                       |
+| ------------------------------------ | ----------------------------------------- |
+| Místa, fotky, popisy, Instagram      | `src/data/places.ts` → `places`           |
+| Akce, ceny, časy, vstupenky          | `src/data/places.ts` → `events`           |
+| Plán Silvestra (obě varianty)        | `src/data/places.ts` → `nyeVariants`      |
+| Předpočítané trasy (auto / pěšky)    | `src/data/routes.json`                    |
 
-```bash
-npm run build     # produkční build do /dist
-npm run preview   # náhled produkčního buildu
-```
+Každá akce má `source` (odkaz) a `verified` (datum ověření). **Silvestr v Mýtě** je zatím
+`status: 'unconfirmed'` – až Mýto Ski & Bike zveřejní program, přepiš ho na `'confirmed'`
+a doplň čas, cenu a zdroj.
 
----
+### Trasy
 
-## ✏️ Kde se co upravuje
+Trasy jsou spočítané po skutečných silnicích/cestách (OSRM: `router.project-osrm.org` pro auto,
+`routing.openstreetmap.de` pro chůzi) a uložené v `routes.json`, takže appka funguje i bez
+živého routovacího API. Jasná je na severní straně Chopku – trasa vede přes Čertovicu, ne přes hřeben.
+Lanovky přes Chopok (Krupová → Priehyba) jsou na mapě čárkovaně fialově a nejsou to silnice.
 
-**Skoro celý obsah je v jednom souboru:** [`src/data.ts`](src/data.ts).
-Stačí měnit pole, UI se přizpůsobí samo.
-
-| Co chceš změnit              | Kde to je v `src/data.ts` |
-| ---------------------------- | ------------------------- |
-| Lokality (jezera) + skóre    | `locations`               |
-| Program na 4 dny             | `program`                 |
-| Trasy (chill / road / MTB)   | `routes`                  |
-| Seznam „Co si vzít"          | `packing`                 |
-| Rozpočet                     | `budget`                  |
-| Možnosti v hlasování         | `vote`                    |
-| Odkazy v horní navigaci      | `navItems`                |
-| Hero obrázek                 | `images.hero`             |
-| Fotogalerie (vibe pruh)      | `gallery`                 |
-| Fotky lokalit / tras         | `image:` u `locations` / `routes` |
-
-Texty v hero sekci a závěrečné výzvě jsou napsané přímo v komponentách
-[`src/components/Hero.tsx`](src/components/Hero.tsx) a
-[`src/components/FinalCta.tsx`](src/components/FinalCta.tsx).
-
-Barvy / téma (navy pozadí, voda, příroda, slunce) se ladí v
-[`src/index.css`](src/index.css) v bloku `@theme`.
-
-### Struktura
+Přepočet trasy (příklad):
 
 ```
-src/
-  data.ts              # veškerý obsah (lokality, program, trasy, rozpočet…)
-  App.tsx              # poskládání sekcí za sebe
-  index.css            # Tailwind + barevné téma
-  components/
-    Nav, Hero, VibeStrip, Why, Locations, Program,
-    Routes, Packing, Budget, Voting, FinalCta, Footer
-    ui/                # malé stavební kameny (Section, ScoreBar, SmartImage)
+https://router.project-osrm.org/route/v1/driving/19.612108,48.847014;LON,LAT?overview=full&geometries=geojson
 ```
 
----
+### Fotky
 
-## 🖼️ Obrázky
+- Fotky z Wikimedia Commons mají uvedenou licenci (CC BY-SA) a autora.
+- Ostatní fotky jsou z oficiálních webů míst (kopeczabavy.sk, jasna.sk, doubleredcars.eu, tale.sk,
+  inzerát chaty). V repozitáři se neukládají – načítají se z původní adresy přes zmenšovač
+  `wsrv.nl` (rychlé načítání na mobilu). Když zmenšovač selže, načte se originál.
+- Plakáty jsou jen u programu akcí.
 
-Používají se veřejné hotlinkovatelné fotky z Unsplash. Pokud se některá
-nenačte (třeba bez internetu), komponenta `SmartImage` ji automaticky nahradí
-barevným gradientem – stránka tím pádem nikdy nevypadá rozbitě.
+## Nasazení (GitHub Pages)
 
-Chceš jinou fotku? V [`src/data.ts`](src/data.ts) stačí vyměnit ID fotky
-v pomocníkovi `img('<ID>')` – `<ID>` je část za `photo-` v Unsplash URL.
-
----
-
-## 🗳️ Hlasování
-
-Funguje čistě lokálně v Reactu (`useState`) – klik jen vizuálně označí výběr.
-Nikam se nic neposílá, žádný backend.
-
----
-
-## 🔮 Co by se dalo dodělat později
-
-- **Sdílení hlasování přes URL** – výběr ukládat do query parametrů
-  (`?lokalita=klopein&termin=...`), aby šlo poslat odkaz s předvyplněnou volbou.
-- **Export do WhatsApp zprávy** – tlačítko „Pošli partě", které vygeneruje text
-  shrnutí a otevře `https://wa.me/?text=...`.
-- **Počítání hlasů** – lehký backend nebo Google Sheet / Supabase, ať se hlasy
-  opravdu sčítají napříč partou.
-- **Reálné GPX trasy** – nahradit fake tlačítko odkazem na Komoot / Strava.
-- **Odpočet do odjezdu** a galerie fotek po návratu.
-
----
-
-Made for boys trip • Brno → Korutany • léto 2026
+Workflow `.github/workflows/deploy.yml` při pushi do `main` postaví appku a nasadí ji na
+`https://tsmerda.github.io/korutany-2026/`. Jednorázově je potřeba v repozitáři:
+**Settings → Pages → Source: GitHub Actions** (u soukromého repozitáře jen s placeným plánem,
+jinak repo přepnout na veřejné).
